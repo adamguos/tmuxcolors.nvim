@@ -1,6 +1,6 @@
 # tmuxcolors.nvim
 
-Forked from [termcolors.nvim](https://github.com/psliwka/termcolors.nvim), inspired by [tmuxline.vim](https://github.com/edkolev/tmuxline.vim)
+Fork of [termcolors.nvim](https://github.com/psliwka/termcolors.nvim), inspired by [tmuxline.vim](https://github.com/edkolev/tmuxline.vim)
 
 ## Usage
 
