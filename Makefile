@@ -1,17 +1,5 @@
-BASE_COMMAND = nvim --cmd 'cd lua/ | source termcolors.lua | source ../plugin/termcolors.vim' +TermcolorsShow\ $@
+BASE_COMMAND = nvim --cmd 'cd lua/ | source tmuxcolors.lua | source ../plugin/tmuxcolors.vim'
 
-.PHONY: kitty
-kitty:
-	${BASE_COMMAND}
-
-.PHONY: alacritty
-alacritty:
-	${BASE_COMMAND}
-
-.PHONY: alacritty-yaml
-alacritty-yaml:
-	${BASE_COMMAND}
-
-.PHONY: termux
-termux:
+.PHONY: tmux
+tmux:
 	${BASE_COMMAND}
