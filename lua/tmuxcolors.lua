@@ -12,11 +12,10 @@ local function build_tmux_config()
     local instruction = "# Copy this to your tmux.conf"
 
     local fg = color_from_syntax("lualine_a_normal", "fg");
-    local bg = color_from_syntax("Visual", "bg");
+    local bg = color_from_syntax("Normal", "bg");
     local highlight = color_from_syntax("lualine_a_normal", "bg");
-    local nobg = color_from_syntax("Normal", "bg");
 
-    local status_style = 'set -g status-style "bg=' .. nobg .. ',fg=' .. fg .. '"'
+    local status_style = 'set -g status-style "bg=' .. bg .. ',fg=' .. fg .. '"'
     local status_left = 'set -g status-left "#[bg=' .. bg .. ']#[fg=' .. fg .. '] #I #[bg=default]#[fg=default] "'
     local status_right = 'set -g status-right ""'
 
