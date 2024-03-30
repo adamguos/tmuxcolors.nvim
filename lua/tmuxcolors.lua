@@ -1,11 +1,11 @@
 local function color_from_syntax(name, type)
-	type = type or "fg"
-	local result = vim.api.nvim_eval('synIDattr(synIDtrans(hlID("' .. name .. '")), "' .. type .. '#")')
-	if result == "" then
-		return nil
-	else
-		return result
-	end
+    type = type or "fg"
+    local result = vim.api.nvim_eval('synIDattr(synIDtrans(hlID("' .. name .. '")), "' .. type .. '#")')
+    if result == "" then
+        return nil
+    else
+        return result
+    end
 end
 
 local function build_tmux_config()
@@ -39,13 +39,13 @@ end
 
 local function tmuxcolors()
     -- Generate output buffer
-	local buf = vim.api.nvim_create_buf(true, true)
-	vim.api.nvim_buf_set_name(buf, "Termcolors")
-	vim.api.nvim_buf_set_lines(buf, 0, 1, true, build_tmux_config())
-	vim.api.nvim_buf_set_option(buf, "modifiable", false)
-	vim.api.nvim_buf_set_option(buf, "readonly", true)
-	vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe")
-	vim.api.nvim_buf_set_option(buf, "filetype", "conf")
+    local buf = vim.api.nvim_create_buf(true, true)
+    vim.api.nvim_buf_set_name(buf, "Termcolors")
+    vim.api.nvim_buf_set_lines(buf, 0, 1, true, build_tmux_config())
+    vim.api.nvim_buf_set_option(buf, "modifiable", false)
+    vim.api.nvim_buf_set_option(buf, "readonly", true)
+    vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe")
+    vim.api.nvim_buf_set_option(buf, "filetype", "conf")
     vim.cmd("buffer " .. buf)
 end
 
