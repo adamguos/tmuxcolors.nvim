@@ -11,9 +11,9 @@ end
 local function build_tmux_config()
     local instruction = "# Copy this to your tmux.conf"
 
-    local fg = color_from_syntax("Normal", "fg");
-    local bg = color_from_syntax("StatusLineNC", "bg");
-    local highlight = color_from_syntax("TabLineSel", "bg");
+    local fg = color_from_syntax("lualine_a_normal", "fg");
+    local bg = color_from_syntax("Visual", "bg");
+    local highlight = color_from_syntax("lualine_a_normal", "bg");
     local nobg = color_from_syntax("Normal", "bg");
 
     local status_style = 'set -g status-style "bg=' .. nobg .. ',fg=' .. fg .. '"'
