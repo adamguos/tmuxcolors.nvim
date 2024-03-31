@@ -21,7 +21,7 @@ local function build_tmux_config()
     local status_right = 'set -g status-right ""'
 
     local window_status_style = 'setw -g window-status-style fg="' .. fg .. '",bg="' .. bg .. '"'
-    local window_status_current_style = 'setw -g window-status-current-style fg="' .. highlight_bg .. '",bg="' .. highlight_fg .. '"'
+    local window_status_current_style = 'setw -g window-status-current-style fg="' .. highlight_fg .. '",bg="' .. highlight_bg .. '"'
     local window_status_format = 'setw -g window-status-format " #I #W "'
     local window_status_current_format = 'setw -g window-status-current-format " #I #W "'
 
