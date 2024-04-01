@@ -13,8 +13,8 @@ local function build_tmux_config()
 
     local fg = color_from_syntax("Normal", "fg");
     local bg = color_from_syntax("Normal", "bg");
-    local highlight_fg = color_from_syntax("lualine_a_normal", "fg");
-    local highlight_bg = color_from_syntax("lualine_a_normal", "bg");
+    local highlight_fg = color_from_syntax("lualine_a_insert", "fg");
+    local highlight_bg = color_from_syntax("lualine_a_insert", "bg");
 
     local status_style = 'set -g status-style "bg=' .. bg .. ',fg=' .. fg .. '"'
     local status_left = 'set -g status-left "#[bg=' .. bg .. ']#[fg=' .. fg .. '] #I #[bg=default]#[fg=default] "'
