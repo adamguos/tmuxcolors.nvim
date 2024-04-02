@@ -17,7 +17,8 @@ local function build_tmux_config()
     local highlight_bg = color_from_syntax("lualine_a_insert", "bg");
 
     local status_style = 'set -g status-style "bg=' .. bg .. ',fg=' .. fg .. '"'
-    local status_left = 'set -g status-left "#[bg=' .. bg .. ']#[fg=' .. fg .. '] #I #[bg=default]#[fg=default] "'
+    local status_left = 'set -g status-left "#[bg=' .. bg .. ']#[fg=' .. fg .. '] #S #[bg=default]#[fg=default] "'
+    local status_left_length = 'set -g status-left-length 100'
     local status_right = 'set -g status-right ""'
 
     local window_status_style = 'setw -g window-status-style fg="' .. fg .. '",bg="' .. bg .. '"'
