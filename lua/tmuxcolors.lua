@@ -30,6 +30,7 @@ local function build_tmux_config()
         instruction,
         status_style,
         status_left,
+        status_left_length,
         status_right,
         window_status_style,
         window_status_current_style,
