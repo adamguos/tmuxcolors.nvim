@@ -13,18 +13,21 @@ local function build_tmux_config()
 
     local fg = color_from_syntax("Normal", "fg");
     local bg = color_from_syntax("Normal", "bg");
-    local highlight_fg = color_from_syntax("lualine_a_insert", "fg");
-    local highlight_bg = color_from_syntax("lualine_a_insert", "bg");
+    local session_fg = color_from_syntax("lualine_a_normal", "fg");
+    local session_bg = color_from_syntax("lualine_a_normal", "bg");
+    local window_current_fg = color_from_syntax("lualine_b_normal", "fg");
+    local window_current_bg = color_from_syntax("lualine_b_normal", "bg");
 
     local status_style = 'set -g status-style "bg=' .. bg .. ',fg=' .. fg .. '"'
-    local status_left = 'set -g status-left "#[bg=' .. bg .. ']#[fg=' .. fg .. '] #S #[bg=default]#[fg=default] "'
+    local status_left = 'set -g status-left "#[bg=' .. session_bg .. ']#[fg=' .. session_fg .. '] #S "'
     local status_left_length = 'set -g status-left-length 100'
     local status_right = 'set -g status-right ""'
 
     local window_status_style = 'setw -g window-status-style fg="' .. fg .. '",bg="' .. bg .. '"'
-    local window_status_current_style = 'setw -g window-status-current-style fg="' .. highlight_fg .. '",bg="' .. highlight_bg .. '"'
+    local window_status_current_style = 'setw -g window-status-current-style fg="' .. window_current_fg .. '",bg="' .. window_current_bg .. '"'
     local window_status_format = 'setw -g window-status-format " #I #W "'
     local window_status_current_format = 'setw -g window-status-current-format " #I #W "'
+    local window_status_separator = 'setw -g window-status-separator ""'
 
     return {
         instruction,
@@ -35,7 +38,8 @@ local function build_tmux_config()
         window_status_style,
         window_status_current_style,
         window_status_format,
-        window_status_current_format
+        window_status_current_format,
+        window_status_separator
     }
 end
 
