@@ -11,20 +11,20 @@ end
 local function build_tmux_config()
     local instruction = "# Copy this to your tmux.conf"
 
-    local fg = color_from_syntax("Normal", "fg");
-    local bg = color_from_syntax("Normal", "bg");
-    local session_fg = color_from_syntax("lualine_a_normal", "fg");
-    local session_bg = color_from_syntax("lualine_a_normal", "bg");
-    local window_current_fg = color_from_syntax("lualine_b_normal", "fg");
-    local window_current_bg = color_from_syntax("lualine_b_normal", "bg");
+    local a_fg = color_from_syntax("lualine_a_normal", "fg");
+    local a_bg = color_from_syntax("lualine_a_normal", "bg");
+    local b_fg = color_from_syntax("lualine_b_normal", "fg");
+    local b_bg = color_from_syntax("lualine_b_normal", "bg");
+    local c_fg = color_from_syntax("lualine_c_normal", "fg");
+    local c_bg = color_from_syntax("lualine_c_normal", "bg");
 
-    local status_style = 'set -g status-style "bg=' .. bg .. ',fg=' .. fg .. '"'
-    local status_left = 'set -g status-left "#[bg=' .. session_bg .. ']#[fg=' .. session_fg .. '] #S "'
+    local status_style = 'set -g status-style "bg=' .. c_bg .. ',fg=' .. c_fg .. '"'
+    local status_left = 'set -g status-left "#[bg=' .. a_bg .. ']#[fg=' .. a_fg .. '] #S "'
     local status_left_length = 'set -g status-left-length 100'
-    local status_right = 'set -g status-right ""'
+    local status_right = 'set -g status-right "#[bg=' .. a_bg .. ']#[fg=' .. a_fg .. '] #(date) "'
 
-    local window_status_style = 'setw -g window-status-style fg="' .. fg .. '",bg="' .. bg .. '"'
-    local window_status_current_style = 'setw -g window-status-current-style fg="' .. window_current_fg .. '",bg="' .. window_current_bg .. '"'
+    local window_status_style = 'setw -g window-status-style fg="' .. c_fg .. '",bg="' .. c_bg .. '"'
+    local window_status_current_style = 'setw -g window-status-current-style fg="' .. b_fg .. '",bg="' .. b_bg .. '"'
     local window_status_format = 'setw -g window-status-format " #I #W "'
     local window_status_current_format = 'setw -g window-status-current-format " #I #W "'
     local window_status_separator = 'setw -g window-status-separator ""'
