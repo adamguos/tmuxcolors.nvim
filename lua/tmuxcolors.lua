@@ -19,12 +19,12 @@ local function build_tmux_config()
     local c_bg = color_from_syntax("lualine_c_normal", "bg");
 
     local status_style = 'set -g status-style "bg=' .. c_bg .. ',fg=' .. c_fg .. '"'
-    local status_left = 'set -g status-left "#[bg=' .. c_fg .. ']#[fg=' .. c_bg .. '] #S "'
+    local status_left = 'set -g status-left "#[bg=' .. b_bg .. ']#[fg=' .. b_fg .. '] #S "'
     local status_left_length = 'set -g status-left-length 100'
-    local status_right = 'set -g status-right "#[bg=' .. c_fg .. ']#[fg=' .. c_bg .. '] #(date) "'
+    local status_right = 'set -g status-right "#[bg=' .. b_bg .. ']#[fg=' .. b_fg .. '] #(date) "'
 
-    local window_status_style = 'setw -g window-status-style fg="' .. c_fg .. '",bg="' .. c_bg .. '"'
-    local window_status_current_style = 'setw -g window-status-current-style fg="' .. c_bg .. '",bg="' .. c_fg .. '"'
+    local window_status_style = 'setw -g window-status-style fg="' .. b_fg .. '",bg="' .. b_bg .. '"'
+    local window_status_current_style = 'setw -g window-status-current-style fg="' .. a_fg .. '",bg="' .. a_bg .. '"'
     local window_status_format = 'setw -g window-status-format " #I #W "'
     local window_status_current_format = 'setw -g window-status-current-format " #I #W "'
     local window_status_separator = 'setw -g window-status-separator ""'
