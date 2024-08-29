@@ -11,12 +11,12 @@ end
 local function build_tmux_config()
     local instruction = "# Copy this to your tmux.conf"
 
-    local a_fg = color_from_syntax("lualine_a_normal", "fg");
-    local a_bg = color_from_syntax("lualine_a_normal", "bg");
-    local b_fg = color_from_syntax("lualine_b_normal", "fg");
-    local b_bg = color_from_syntax("lualine_b_normal", "bg");
-    local c_fg = color_from_syntax("lualine_c_normal", "fg");
-    local c_bg = color_from_syntax("lualine_c_normal", "bg");
+    local a_fg = color_from_syntax("lualine_a_insert", "fg");
+    local a_bg = color_from_syntax("lualine_a_insert", "bg");
+    local b_fg = color_from_syntax("lualine_b_insert", "fg");
+    local b_bg = color_from_syntax("lualine_b_insert", "bg");
+    local c_fg = color_from_syntax("lualine_c_insert", "fg");
+    local c_bg = color_from_syntax("lualine_c_insert", "bg");
 
     local status_style = 'set -g status-style "bg=' .. c_bg .. ',fg=' .. c_fg .. '"'
     local status_left = 'set -g status-left "#[bg=' .. b_bg .. ']#[fg=' .. b_fg .. '] #S "'
