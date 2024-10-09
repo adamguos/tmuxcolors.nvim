@@ -8,15 +8,22 @@ local function color_from_syntax(name, type)
     end
 end
 
+local function is_empty(s)
+    return s == nil or s == ''
+end
+
 local function build_tmux_config()
     local instruction = "# Copy this to your tmux.conf"
 
-    local a_fg = color_from_syntax("lualine_a_visual", "fg");
-    local a_bg = color_from_syntax("lualine_a_visual", "bg");
-    local b_fg = color_from_syntax("lualine_b_visual", "fg");
-    local b_bg = color_from_syntax("lualine_b_visual", "bg");
-    local c_fg = color_from_syntax("lualine_c_visual", "fg");
-    local c_bg = color_from_syntax("lualine_c_visual", "bg");
+    local a_fg = color_from_syntax("lualine_a_normal", "fg");
+    local a_bg = color_from_syntax("lualine_a_normal", "bg");
+    local b_fg = color_from_syntax("lualine_b_normal", "fg");
+    local b_bg = color_from_syntax("lualine_b_normal", "bg");
+    local c_fg = color_from_syntax("lualine_c_normal", "fg");
+    local c_bg = color_from_syntax("lualine_c_normal", "bg");
+
+    if is_empty(c_fg) then c_fg = b_fg end
+    if is_empty(c_bg) then c_bg = b_bg end
 
     local status_style = 'set -g status-style "bg=' .. c_bg .. ',fg=' .. c_fg .. '"'
     local status_left = 'set -g status-left "#[bg=' .. b_bg .. ']#[fg=' .. b_fg .. '] #S "'
