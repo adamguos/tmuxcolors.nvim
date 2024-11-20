@@ -17,10 +17,10 @@ local function build_tmux_config()
 
     local a_fg = color_from_syntax("lualine_a_normal", "fg");
     local a_bg = color_from_syntax("lualine_a_normal", "bg");
-    local b_fg = color_from_syntax("lualine_b_normal", "fg");
-    local b_bg = color_from_syntax("lualine_b_normal", "bg");
-    local c_fg = color_from_syntax("lualine_c_normal", "fg");
-    local c_bg = color_from_syntax("lualine_c_normal", "bg");
+    local b_fg = color_from_syntax("Normal", "fg");
+    local b_bg = color_from_syntax("Normal", "bg");
+    local c_fg = color_from_syntax("Normal", "fg");
+    local c_bg = color_from_syntax("Normal", "bg");
 
     if is_empty(c_fg) then c_fg = b_fg end
     if is_empty(c_bg) then c_bg = b_bg end
