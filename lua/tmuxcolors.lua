@@ -31,7 +31,7 @@ local function build_tmux_config()
     local status_right = 'set -g status-right "#[bg=' .. b_bg .. ']#[fg=' .. b_fg .. '] #(date) "'
 
     local window_status_style = 'setw -g window-status-style fg="' .. b_fg .. '",bg="' .. b_bg .. '"'
-    local window_status_current_style = 'setw -g window-status-current-style fg="' .. a_fg .. '",bg="' .. a_bg .. '"'
+    local window_status_current_style = 'setw -g window-status-current-style fg="' .. a_bg .. '",bg="' .. a_fg .. '"'
     local window_status_format = 'setw -g window-status-format " #I #W "'
     local window_status_current_format = 'setw -g window-status-current-format " #I #W "'
     local window_status_separator = 'setw -g window-status-separator ""'
